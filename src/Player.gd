@@ -40,8 +40,6 @@ func _physics_process(delta):
 	
 	if _velocity.x != 0 and is_on_floor():
 		_sprite.play("walk")
-	else:
-		_sprite.play("jump")
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		_velocity.y -= jump_strength
@@ -49,10 +47,11 @@ func _physics_process(delta):
 	
 	if not is_on_floor():
 		_sprite.play("jump")
+		if _velocity.y > 0:
+			_sprite.play("fall")
 	
 	if is_on_wall():
 		direction.x = 0
-	print(_velocity.x)
 	_velocity = move_and_slide(_velocity, Vector2.UP)
 	
-	#print("final V = ", _velocity)
+
