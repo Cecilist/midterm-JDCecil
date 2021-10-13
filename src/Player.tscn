@@ -35,7 +35,7 @@ animations = [ {
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 8 )
 speed = 4
-jump_strength = 275
+jump_strength = 375
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )

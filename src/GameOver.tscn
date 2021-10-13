@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 137.198
+margin_top = 203.125
+margin_right = 581.198
+margin_bottom = 500.125
+text = "Ope, You lost."
+__meta__ = {
+"_edit_use_anchors_": false
+}
