@@ -44,6 +44,7 @@ jump={
 [physics]
 
 common/enable_pause_aware_picking=true
+2d/default_gravity=500
 
 [rendering]
 
