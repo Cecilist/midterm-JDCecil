@@ -16,37 +16,43 @@ func _physics_process(delta):
 		if direction.x < 0:
 			direction.x = 0
 		direction.x += 1
-		print(direction.x)
+		if is_on_floor():
+			_sprite.flip_h = false
+			_sprite.play("walk")
 
 	elif Input.is_action_pressed("move_left"):
 		if direction.x > 0:
 			direction.x = 0
 		direction.x -= 1
-		print(direction.x)
-	
+		if is_on_floor():
+			_sprite.flip_h = true
+			_sprite.play("walk")
+
 	else: 
 		# if nothing is being pressed, stop the character
-		direction.x = 0.0
+		direction.x = 0
+		if is_on_floor():
+			_sprite.play(" idle")
+
 	
 
 	_velocity.x = direction.x * speed
 	
-	
-	if _sprite.flip_h and _velocity.x > 0:
-		_sprite.flip_h = false
-	elif not _sprite.flip_h and _velocity.x < 0:
-		_sprite.flip_h = true
+	if _velocity.x != 0 and is_on_floor():
+		_sprite.play("walk")
+	else:
+		_sprite.play("jump")
 		
-	
-		if _velocity.x !=0:
-			_sprite.play("walk")
-		else:
-			_sprite.play("idle")
-	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		_velocity.y -= jump_strength
 		_sprite.play("jump")
+	
+	if not is_on_floor():
+		_sprite.play("jump")
+	
 	if is_on_wall():
 		direction.x = 0
-	
+	print(_velocity.x)
 	_velocity = move_and_slide(_velocity, Vector2.UP)
+	
+	#print("final V = ", _velocity)
