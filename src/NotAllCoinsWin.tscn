@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/GameOver.gd" type="Script" id=1]
+
+[node name="NotAllCoinsWin" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 42.2355
+margin_top = 195.991
+margin_right = 486.235
+margin_bottom = 495.991
+text = "Way to go, you made it to the end, but you left some coins behind!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleButton" type="Button" parent="."]
+margin_left = 171.045
+margin_top = 288.353
+margin_right = 291.045
+margin_bottom = 346.353
+text = "Back to Title"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetryButton" type="Button" parent="."]
+margin_left = 170.0
+margin_top = 366.0
+margin_right = 293.0
+margin_bottom = 435.0
+text = "Play Again?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="TitleButton" to="." method="_on_TitleButton_pressed"]
+[connection signal="pressed" from="RetryButton" to="." method="_on_RetryButton_pressed"]

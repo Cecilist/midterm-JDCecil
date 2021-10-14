@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/tilesheet_complete_2X.png" type="Texture" id=1]
 [ext_resource path="res://src/Level.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/gold_3.png" type="Texture" id=6]
 [ext_resource path="res://assets/gold_4.png" type="Texture" id=7]
 [ext_resource path="res://src/Coin.gd" type="Script" id=8]
+[ext_resource path="res://src/flagRed_up.png" type="Texture" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -97,6 +98,9 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 801.772, 387.293 )
 
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 562.272, 28.1226 )
+
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -115,7 +119,7 @@ __meta__ = {
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 10 )
 format = 1
-tile_data = PoolIntArray( -1048576, -1610612736, 0, -1048561, -1073741824, 0, -983027, 2, 0, -917504, -1610612736, 0, -917489, -1073741824, 0, -851959, 2, 0, -786432, -1610612736, 0, -786417, -1073741824, 0, -720894, 2, 0, -655360, -1610612736, 0, -655358, 2, 0, -655345, -1073741824, 0, -524288, -1610612736, 0, -524282, 2, 0, -524273, -1073741824, 0, -458739, 2, 0, -393216, -1610612736, 0, -393203, 2, 0, -393201, -1073741824, 0, -327667, 2, 0, -262144, -1610612736, 0, -262129, -1073741824, 0, -196597, 2, 0, -131072, -1610612736, 0, -131064, 2, 0, -131057, -1073741824, 0, 0, -1610612736, 0, 5, 2, 0, 15, -1073741824, 0, 131072, -1610612736, 0, 131074, 2, 0, 131087, -1073741824, 0, 262144, -1610612736, 0, 262148, 2, 0, 262159, -1073741824, 0, 327687, 2, 0, 393216, -1610612736, 0, 393226, 2, 0, 393231, -1073741824, 0, 458754, 2, 0, 524288, -1610612736, 0, 524301, 2, 0, 524303, -1073741824, 0, 589826, 2, 0, 589828, 2, 0, 655360, -1610612736, 0, 655370, 2, 0, 655375, -1073741824, 0, 720902, 2, 0, 786432, -1610612736, 0, 786434, 2, 0, 786447, -1073741824, 0, 917504, -1610612736, 0, 917506, 2, 0, 917508, 2, 0, 917510, 2, 0, 917512, 2, 0, 917514, 2, 0, 917516, 2, 0, 917518, 2, 0, 917519, -1073741824, 0, 1048576, -1610612736, 0, 1048591, -1073741824, 0, 1179648, -1610612736, 0, 1179650, 2, 0, 1179655, 2, 0, 1179661, 2, 0, 1179663, -1073741824, 0, 1310720, -1610612736, 0, 1310735, -1073741824, 0, 1441792, -1610612736, 0, 1441807, -1073741824, 0, 1507330, 2, 0, 1507341, 2, 0, 1572864, -1610612736, 0, 1572879, -1073741824, 0 )
+tile_data = PoolIntArray( -1048576, -1610612736, 0, -1048574, 2, 0, -1048572, 2, 0, -1048570, 2, 0, -1048568, 2, 0, -1048566, 2, 0, -1048564, 2, 0, -1048562, 2, 0, -1048561, -1073741824, 0, -983027, 2, 0, -917504, -1610612736, 0, -917489, -1073741824, 0, -851959, 2, 0, -786432, -1610612736, 0, -786417, -1073741824, 0, -720894, 2, 0, -655360, -1610612736, 0, -655358, 2, 0, -655345, -1073741824, 0, -524288, -1610612736, 0, -524282, 2, 0, -524273, -1073741824, 0, -458739, 2, 0, -393216, -1610612736, 0, -393203, 2, 0, -393201, -1073741824, 0, -327667, 2, 0, -262144, -1610612736, 0, -262129, -1073741824, 0, -196597, 2, 0, -131072, -1610612736, 0, -131064, 2, 0, -131057, -1073741824, 0, 0, -1610612736, 0, 5, 2, 0, 15, -1073741824, 0, 131072, -1610612736, 0, 131074, 2, 0, 131087, -1073741824, 0, 262144, -1610612736, 0, 262148, 2, 0, 262159, -1073741824, 0, 327687, 2, 0, 393216, -1610612736, 0, 393226, 2, 0, 393231, -1073741824, 0, 458754, 2, 0, 524288, -1610612736, 0, 524301, 2, 0, 524303, -1073741824, 0, 589826, 2, 0, 589828, 2, 0, 655360, -1610612736, 0, 655370, 2, 0, 655375, -1073741824, 0, 720902, 2, 0, 786432, -1610612736, 0, 786434, 2, 0, 786447, -1073741824, 0, 917504, -1610612736, 0, 917506, 2, 0, 917508, 2, 0, 917510, 2, 0, 917512, 2, 0, 917514, 2, 0, 917516, 2, 0, 917518, 2, 0, 917519, -1073741824, 0, 1048576, -1610612736, 0, 1048591, -1073741824, 0, 1179648, -1610612736, 0, 1179650, 2, 0, 1179655, 2, 0, 1179661, 2, 0, 1179663, -1073741824, 0, 1310720, -1610612736, 0, 1310735, -1073741824, 0, 1441792, -1610612736, 0, 1441807, -1073741824, 0, 1507330, 2, 0, 1507341, 2, 0, 1572864, -1610612736, 0, 1572879, -1073741824, 0 )
 
 [node name="SpawnPoint" type="Position2D" parent="."]
 position = Vector2( 172.72, 871.764 )
@@ -153,7 +157,6 @@ shape = SubResource( 12 )
 position = Vector2( -11.5736, 20.2043 )
 scale = Vector2( 0.587329, 0.518945 )
 frames = SubResource( 13 )
-frame = 1
 playing = true
 
 [node name="Coin3" type="Area2D" parent="."]
@@ -193,7 +196,7 @@ frame = 1
 playing = true
 
 [node name="Coin5" type="Area2D" parent="."]
-position = Vector2( 458.327, -713.852 )
+position = Vector2( 746.653, -350.775 )
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
@@ -230,6 +233,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="Lava"]
+margin_left = -431.0
+margin_top = -40.0
+margin_right = 511.0
+margin_bottom = 142.0
+text = "Lava"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goal" type="Area2D" parent="."]
+position = Vector2( 534.913, -1050.64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Goal"]
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+shape = SubResource( 14 )
+
 [connection signal="body_entered" from="Coin" to="." method="_on_Coin_body_entered"]
 [connection signal="body_entered" from="Coin" to="Coin" method="_on_Coin_body_entered"]
 [connection signal="body_entered" from="Coin2" to="." method="_on_Coin_body_entered"]
@@ -241,3 +266,4 @@ __meta__ = {
 [connection signal="body_entered" from="Coin5" to="." method="_on_Coin_body_entered"]
 [connection signal="body_entered" from="Coin5" to="Coin5" method="_on_Coin_body_entered"]
 [connection signal="body_entered" from="Lava" to="." method="_on_Lava_body_entered"]
+[connection signal="body_entered" from="Goal" to="." method="_on_Goal_body_entered"]

@@ -20,7 +20,7 @@ margin_left = 211.882
 margin_top = 151.752
 margin_right = 381.882
 margin_bottom = 220.752
-text = "You're Halfway There!"
+text = "You are Halfway There!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
