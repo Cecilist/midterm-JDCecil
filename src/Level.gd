@@ -2,7 +2,7 @@ extends Node2D
 
 var totalCoins : int = 10
 # Since we start "half-way there" we start with half the coins already collected
-var coinsCollected : int = totalCoins / 2
+var coinsCollected : float = totalCoins / 2.0
 var _player : KinematicBody2D
 
 

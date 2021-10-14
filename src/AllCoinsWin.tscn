@@ -1,39 +1,158 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://assets/gold_1.png" type="Texture" id=2]
+[ext_resource path="res://src/ZCOOLKuaiLe-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/gold_2.png" type="Texture" id=4]
+[ext_resource path="res://assets/gold_3.png" type="Texture" id=5]
+[ext_resource path="res://assets/gold_4.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+outline_size = 2
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+outline_size = 1
+outline_color = Color( 1, 0.0156863, 0.0156863, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_size = 1
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="AllCoinsWin" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -24.0
+margin_top = -22.0
+margin_right = 640.0
+margin_bottom = 1043.0
+rect_pivot_offset = Vector2( -255.366, 468.324 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="."]
-margin_left = 129.189
-margin_top = 207.13
-margin_right = 573.189
-margin_bottom = 504.13
-text = "Way to go, You made it to the end with all the coins!"
+margin_left = -135.65
+margin_top = 87.6149
+margin_right = 744.35
+margin_bottom = 384.615
+custom_fonts/font = SubResource( 1 )
+text = "Way to go, You made it to 
+the end with all the coins!"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TitleButton" type="Button" parent="."]
-margin_left = 171.045
-margin_top = 288.353
-margin_right = 291.045
-margin_bottom = 346.353
+margin_left = 320.0
+margin_top = 263.0
+margin_right = 462.0
+margin_bottom = 330.0
+custom_fonts/font = SubResource( 2 )
 text = "Back to Title"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RetryButton" type="Button" parent="."]
-margin_left = 170.0
-margin_top = 366.0
-margin_right = 294.0
-margin_bottom = 435.0
+margin_left = 112.017
+margin_top = 261.348
+margin_right = 236.017
+margin_bottom = 330.348
+custom_fonts/font = SubResource( 3 )
 text = "Play Again?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TitleCoin" type="AnimatedSprite" parent="."]
+position = Vector2( 474.64, 491.211 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 4 )
+frame = 2
+playing = true
+offset = Vector2( -730.045, -103.745 )
+
+[node name="TitleCoin2" type="AnimatedSprite" parent="."]
+position = Vector2( 569.392, 491.211 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 4 )
+playing = true
+offset = Vector2( -730.045, -103.745 )
+
+[node name="TitleCoin3" type="AnimatedSprite" parent="."]
+position = Vector2( -451.393, 189.78 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 4 )
+playing = true
+offset = Vector2( 1171.7, 477.108 )
+
+[node name="TitleCoin4" type="AnimatedSprite" parent="."]
+position = Vector2( 757.483, 491.211 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 4 )
+playing = true
+offset = Vector2( -730.045, -103.745 )
+
+[node name="TitleCoin5" type="AnimatedSprite" parent="."]
+position = Vector2( 850.821, 491.211 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 4 )
+playing = true
+offset = Vector2( -730.045, -103.745 )
+
+[node name="TitleCoin6" type="AnimatedSprite" parent="."]
+position = Vector2( 473.835, 603.891 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 4 )
+playing = true
+offset = Vector2( -730.045, -103.745 )
+
+[node name="TitleCoin7" type="AnimatedSprite" parent="."]
+position = Vector2( 569.697, 603.891 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 4 )
+frame = 3
+playing = true
+offset = Vector2( -730.045, -103.745 )
+
+[node name="TitleCoin8" type="AnimatedSprite" parent="."]
+position = Vector2( 759.886, 603.891 )
+scale = Vector2( 0.719945, 0.518945 )
+frames = SubResource( 4 )
+playing = true
+offset = Vector2( -730.045, -103.745 )
+
+[node name="TitleCoin9" type="AnimatedSprite" parent="."]
+position = Vector2( 756.997, 603.891 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 4 )
+playing = true
+offset = Vector2( -730.045, -103.745 )
+
+[node name="TitleCoin10" type="AnimatedSprite" parent="."]
+position = Vector2( 848.553, 603.891 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 4 )
+playing = true
+offset = Vector2( -730.045, -103.745 )
 
 [connection signal="pressed" from="TitleButton" to="." method="_on_TitleButton_pressed"]
 [connection signal="pressed" from="RetryButton" to="." method="_on_RetryButton_pressed"]

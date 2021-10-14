@@ -1,35 +1,64 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://src/ZCOOLKuaiLe-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 35
+outline_size = 2
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 2 )
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -24.0
+margin_right = 634.0
+margin_bottom = 1030.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="."]
-margin_left = 129.189
-margin_top = 207.13
-margin_right = 573.189
-margin_bottom = 504.13
-text = "Ope, You lost."
+margin_left = 6.0
+margin_top = 45.0
+margin_right = 579.0
+margin_bottom = 509.0
+custom_fonts/font = SubResource( 1 )
+text = "Game Over!
+You tried to swim in lava"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TitleButton" type="Button" parent="."]
-margin_left = 171.045
-margin_top = 288.353
-margin_right = 291.045
-margin_bottom = 346.353
+margin_left = 356.0
+margin_top = 250.0
+margin_right = 472.0
+margin_bottom = 318.0
+custom_fonts/font = SubResource( 2 )
 text = "Back to Title"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="RetryButton" type="Button" parent="."]
-margin_left = 170.0
-margin_top = 366.0
-margin_right = 277.0
-margin_bottom = 435.0
+margin_left = 132.701
+margin_top = 249.215
+margin_right = 250.701
+margin_bottom = 318.215
+custom_fonts/font = SubResource( 3 )
 text = "Try again?"
 __meta__ = {
 "_edit_use_anchors_": false

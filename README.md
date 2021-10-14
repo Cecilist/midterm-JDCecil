@@ -3,7 +3,6 @@ by Jacob Cecil
 
 TODO: 
 
-Add win screen. Seperate screen for if all coins or not. 
 
 Add fonts
 
