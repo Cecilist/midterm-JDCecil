@@ -26,5 +26,5 @@ func _game_Over():
 func _on_Coin_body_entered(body):
 	if body == _player:
 		coinsCollected += 1
-		$HUD/CoinsLabel.text = "Coins Collected: " + str(coinsCollected) + "/ 10"
-		$Coin.queue_free()
+		$HUD/CoinsLabel.text = "Coins Collected: " + str(coinsCollected) + " / 10"
+		

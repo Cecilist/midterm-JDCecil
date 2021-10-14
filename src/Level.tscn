@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/tilesheet_complete_2X.png" type="Texture" id=1]
 [ext_resource path="res://src/Level.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/gold_2.png" type="Texture" id=5]
 [ext_resource path="res://assets/gold_3.png" type="Texture" id=6]
 [ext_resource path="res://assets/gold_4.png" type="Texture" id=7]
+[ext_resource path="res://src/Coin.gd" type="Script" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
 points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
@@ -82,9 +83,6 @@ points = PoolVector2Array( 128, 64, 0, 64, 0, 0, 128, 0 )
 } ]
 2/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 801.772, 387.293 )
-
 [sub_resource type="CircleShape2D" id=12]
 radius = 24.3669
 
@@ -96,19 +94,123 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 801.772, 387.293 )
+
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="CoinsLabel" type="Label" parent="HUD"]
+margin_left = 15.1361
+margin_top = 8.40897
+margin_right = 127.136
+margin_bottom = 83.409
+text = "Coins Collected: 5 / 10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 10 )
 format = 1
-tile_data = PoolIntArray( -393216, -1610612736, 0, -393201, -1073741824, 0, -393199, 2, 0, -393197, 2, 0, -393195, 2, 0, -393193, 2, 0, -327667, 2, 0, -262144, -1610612736, 0, -262129, -1073741824, 0, -196597, 2, 0, -131072, -1610612736, 0, -131064, 2, 0, -131057, -1073741824, 0, 0, -1610612736, 0, 5, 2, 0, 15, -1073741824, 0, 131072, -1610612736, 0, 131074, 2, 0, 131087, -1073741824, 0, 262144, -1610612736, 0, 262148, 2, 0, 262159, -1073741824, 0, 327687, 2, 0, 393216, -1610612736, 0, 393226, 2, 0, 393231, -1073741824, 0, 458754, 2, 0, 524288, -1610612736, 0, 524301, 2, 0, 524303, -1073741824, 0, 589826, 2, 0, 589828, 2, 0, 655360, -1610612736, 0, 655370, 2, 0, 655375, -1073741824, 0, 720902, 2, 0, 786432, -1610612736, 0, 786434, 2, 0, 786447, -1073741824, 0, 917504, -1610612736, 0, 917506, 2, 0, 917508, 2, 0, 917510, 2, 0, 917512, 2, 0, 917514, 2, 0, 917516, 2, 0, 917518, 2, 0, 917519, -1073741824, 0, 1048576, -1610612736, 0, 1048591, -1073741824, 0, 1179648, -1610612736, 0, 1179650, 2, 0, 1179655, 2, 0, 1179661, 2, 0, 1179663, -1073741824, 0, 1245199, -1073741824, 0, 1376256, -1610612736, 0, 1376271, -1073741824, 0, 1507328, -1610612736, 0, 1507330, 2, 0, 1507341, 2, 0, 1507343, -1073741824, 0 )
+tile_data = PoolIntArray( -1048576, -1610612736, 0, -1048561, -1073741824, 0, -983027, 2, 0, -917504, -1610612736, 0, -917489, -1073741824, 0, -851959, 2, 0, -786432, -1610612736, 0, -786417, -1073741824, 0, -720894, 2, 0, -655360, -1610612736, 0, -655358, 2, 0, -655345, -1073741824, 0, -524288, -1610612736, 0, -524282, 2, 0, -524273, -1073741824, 0, -458739, 2, 0, -393216, -1610612736, 0, -393203, 2, 0, -393201, -1073741824, 0, -327667, 2, 0, -262144, -1610612736, 0, -262129, -1073741824, 0, -196597, 2, 0, -131072, -1610612736, 0, -131064, 2, 0, -131057, -1073741824, 0, 0, -1610612736, 0, 5, 2, 0, 15, -1073741824, 0, 131072, -1610612736, 0, 131074, 2, 0, 131087, -1073741824, 0, 262144, -1610612736, 0, 262148, 2, 0, 262159, -1073741824, 0, 327687, 2, 0, 393216, -1610612736, 0, 393226, 2, 0, 393231, -1073741824, 0, 458754, 2, 0, 524288, -1610612736, 0, 524301, 2, 0, 524303, -1073741824, 0, 589826, 2, 0, 589828, 2, 0, 655360, -1610612736, 0, 655370, 2, 0, 655375, -1073741824, 0, 720902, 2, 0, 786432, -1610612736, 0, 786434, 2, 0, 786447, -1073741824, 0, 917504, -1610612736, 0, 917506, 2, 0, 917508, 2, 0, 917510, 2, 0, 917512, 2, 0, 917514, 2, 0, 917516, 2, 0, 917518, 2, 0, 917519, -1073741824, 0, 1048576, -1610612736, 0, 1048591, -1073741824, 0, 1179648, -1610612736, 0, 1179650, 2, 0, 1179655, 2, 0, 1179661, 2, 0, 1179663, -1073741824, 0, 1310720, -1610612736, 0, 1310735, -1073741824, 0, 1441792, -1610612736, 0, 1441807, -1073741824, 0, 1507330, 2, 0, 1507341, 2, 0, 1572864, -1610612736, 0, 1572879, -1073741824, 0 )
 
 [node name="SpawnPoint" type="Position2D" parent="."]
-position = Vector2( 302.059, 868.121 )
+position = Vector2( 172.72, 871.764 )
+
+[node name="Coin" type="Area2D" parent="."]
+position = Vector2( 171.715, 220.247 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin"]
+position = Vector2( -12.0135, 18.6878 )
+shape = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Coin"]
+position = Vector2( -11.5736, 20.2043 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 13 )
+frame = 2
+playing = true
+
+[node name="Coin2" type="Area2D" parent="."]
+position = Vector2( 890.948, 418.461 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin2"]
+position = Vector2( -12.0135, 18.6878 )
+shape = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Coin2"]
+position = Vector2( -11.5736, 20.2043 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 13 )
+frame = 3
+playing = true
+
+[node name="Coin3" type="Area2D" parent="."]
+position = Vector2( 194.368, -153.527 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin3"]
+position = Vector2( -12.0135, 18.6878 )
+shape = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Coin3"]
+position = Vector2( -11.5736, 20.2043 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 13 )
+frame = 1
+playing = true
+
+[node name="Coin4" type="Area2D" parent="."]
+position = Vector2( 184.327, -843.852 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin4"]
+position = Vector2( -12.0135, 18.6878 )
+shape = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Coin4"]
+position = Vector2( -11.5736, 20.2043 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 13 )
+playing = true
+
+[node name="Coin5" type="Area2D" parent="."]
+position = Vector2( 458.327, -713.852 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin5"]
+position = Vector2( -12.0135, 18.6878 )
+shape = SubResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Coin5"]
+position = Vector2( -11.5736, 20.2043 )
+scale = Vector2( 0.587329, 0.518945 )
+frames = SubResource( 13 )
+frame = 3
+playing = true
 
 [node name="Lava" type="Area2D" parent="."]
-position = Vector2( -819.288, 728.436 )
+position = Vector2( 544.511, 1928.55 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -128,34 +230,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Coin" type="Area2D" parent="."]
-position = Vector2( 171.715, 220.247 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Coin"]
-position = Vector2( -12.0135, 18.6878 )
-shape = SubResource( 12 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Coin"]
-position = Vector2( -11.5736, 20.2043 )
-scale = Vector2( 0.587329, 0.518945 )
-frames = SubResource( 13 )
-frame = 1
-playing = true
-
-[node name="HUD" type="CanvasLayer" parent="."]
-
-[node name="CoinsLabel" type="Label" parent="HUD"]
-margin_left = 15.1361
-margin_top = 8.40897
-margin_right = 127.136
-margin_bottom = 83.409
-text = "Coins Collected: 5 / 10"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="body_entered" from="Lava" to="." method="_on_Lava_body_entered"]
 [connection signal="body_entered" from="Coin" to="." method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coin" to="Coin" method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coin2" to="." method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coin2" to="Coin2" method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coin3" to="." method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coin3" to="Coin3" method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coin4" to="." method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coin4" to="Coin4" method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coin5" to="." method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Coin5" to="Coin5" method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="Lava" to="." method="_on_Lava_body_entered"]
