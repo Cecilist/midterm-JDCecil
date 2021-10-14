@@ -2,14 +2,11 @@
 by Jacob Cecil
 
 TODO: 
-Make collectables (start with half allready collected.)
 
-Make HUD
+Add win screen. Seperate screen for if all coins or not. 
 
-Design level (put player "half-way" to end.)
+Add fonts
 
-  Redo tilemap to match platforms. 
-  
 Add sound
 
 Refine "lava" 
